@@ -24,6 +24,8 @@ You can do everything `dra` does with the official [GitHub cli](https://cli.gith
   (with `gh` you need to provide [glob pattern](https://cli.github.com/manual/gh_release_download) that you need to
   create manually).
 - [Automatically select and download](#automatic) an asset based on your operating system and architecture
+- [Download and install assets](#install-assets), with support for the most common formats (e.g. tar/zip archives,
+  deb/rpm packages...)
 
 ## Installation
 
