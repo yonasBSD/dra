@@ -142,18 +142,50 @@ dra download -a devmatteini/dra-tests
 
 #### Selection
 
+Select and download the first asset that matches a given pattern
+
+```shell
+dra download --select <PATTERN> devmatteini/dra-tests
+```
+
+You can pass one of the following patterns:
+
+##### Literal
+
+The exact name of the asset.
+
+```shell
+dra download --select helloworld.tar.gz devmatteini/dra-tests
+```
+
+##### Untagged
+
+A version-free pattern of your asset. Most of the time, this is the pattern you will use.
+
+It's useful when release assets contain the release tag in their name, and you want a stable pattern to download across
+different releases.
+
 First, you need to generate an untagged asset name:
 
 ```shell
 dra untag devmatteini/dra-tests
-# output: helloworld_{tag}.tar.gz
+# Output: helloworld_{tag}.tar.gz
 ```
 
 Copy the output and run:
 
 ```shell
-# use this command in your scripts
 dra download --select "helloworld_{tag}.tar.gz" devmatteini/dra-tests
+```
+
+##### Wildcard
+
+A [wildcard pattern](https://en.wikipedia.org/wiki/Matching_wildcards), using `*` and/or `?` special characters.
+
+It's useful when release assets contain sections that change for each release (e.g. a build number or timestamp).
+
+```shell
+dra download --select 'helloworld*_amd64.deb' devmatteini/dra-tests
 ```
 
 ### Download options
