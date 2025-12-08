@@ -68,6 +68,7 @@ pub enum Command {
         ///
         /// Supported assets are:
         /// - Debian packages (requires elevated privileges)
+        /// - RPM packages (requires elevated privileges)
         /// - Tar archives with executable(s)
         /// - Zip files with executable(s)
         /// - 7-Zip files with executable(s) (requires `7z` cli to be installed and in your `PATH`)
