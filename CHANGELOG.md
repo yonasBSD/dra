@@ -7,13 +7,46 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+## [0.10.0] - 2025-12-08
+
 ### Added
 
-- Add support for installing RPM packages ([#335](https://github.com/devmatteini/dra/issues/335))
+- Install RPM assets ([#335](https://github.com/devmatteini/dra/issues/335))
+- Download selection mode now supports [wildcard pattern](https://en.wikipedia.org/wiki/Matching_wildcards), using `*`
+  and `?` special characters, to select the first asset matching the given
+  pattern ([#271](https://github.com/devmatteini/dra/issues/271)).
+
+  This new feature is useful when release assets contain sections that change for each release (e.g. a build number or
+  timestamp).
+
+  For example, `dra download -s 'helloworld*_amd64.deb' devmatteini/dra-tests`.
+
+  **Selection mode is backward compatible with previous versions. You can still pass literal or untagged patterns.**
+
+### Changed
+
+- Rewrite download automatic mode, **without any breaking change**, to be more customizable, reliable and easier to
+  maintain.
 
 ### Fixed
 
 - Handle more Windows OS formats in install script ([#336](https://github.com/devmatteini/dra/issues/336))
+
+### Updated dependencies
+
+- bump `zip` from 2.6.1 to 6.0.0
+- bump `uuid` from 1.16.0 to 1.18.1
+- bump `url` from 2.5.4 to 2.5.7
+- bump `ureq` from 3.0.12 to 3.1.4
+- bump `serde` from 1.0.219 to 1.0.228
+- bump `indicatif` from 0.18.0 to 0.18.3
+- bump `flate2` from 1.1.2 to 1.1.5
+- bump `dialoguer` from 0.11.0 to 0.12.0
+- bump `ctrlc` from 3.4.7 to 3.5.1
+- bump `clap` from 4.5.48 to 4.5.53
+- bump `clap_complete` from 4.5.57 to 4.5.61
+- bump `bzip2` from 0.6.0 to 0.6.1
+- bump `assert_cmd` from 2.0.17 to 2.1.1
 
 ## [0.9.1] - 2025-11-11
 
