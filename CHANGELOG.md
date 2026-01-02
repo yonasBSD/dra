@@ -7,6 +7,13 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+## [0.10.1] - 2026-01-02
+
+### Fixed
+
+- Statically link `liblzma` and `bzip2` dependencies to avoid missing shared library
+  errors ([#339](https://github.com/devmatteini/dra/issues/339))
+
 ## [0.10.0] - 2025-12-08
 
 ### Added
